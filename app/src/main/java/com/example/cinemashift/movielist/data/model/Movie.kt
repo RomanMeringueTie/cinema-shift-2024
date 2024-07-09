@@ -1,9 +1,9 @@
-package com.example.cinemashift.data
+package com.example.cinemashift.movielist.data.model
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class MovieItem(
+data class Movie(
     val id: String,
     val name: String,
     val originalName: String,
