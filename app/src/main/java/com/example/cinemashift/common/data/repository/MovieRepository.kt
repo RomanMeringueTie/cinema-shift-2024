@@ -1,5 +1,6 @@
-package com.example.cinemashift.data
+package com.example.cinemashift.common.data.repository
 
+import com.example.cinemashift.common.data.network.MovieApi
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.Interceptor
@@ -9,7 +10,8 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
 import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
-class MovieListRepository {
+
+open class MovieRepository {
     private companion object {
         const val BASE_URL = "https://shift-backend.onrender.com/cinema/"
         const val CONNECT_TIMEOUT = 10L
@@ -38,9 +40,8 @@ class MovieListRepository {
             level = HttpLoggingInterceptor.Level.BODY
         }
 
-    private val movieApi by lazy {
+    protected val movieApi by lazy {
         retrofit.create(MovieApi::class.java)
     }
-    suspend fun getMovieList(): MovieListItem =
-        movieApi.getMovieList()
+
 }
