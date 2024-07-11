@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.example.cinemashift.main.ui.MainScreen
 import com.example.cinemashift.ui.theme.CinemaShiftTheme
 import com.example.cinemashift.movielist.data.ui.MovieListScreen
 import com.example.cinemashift.movielist.domain.usecase.GetMovieListUseCase
@@ -21,8 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val viewModel = MovieListViewModel(GetMovieListUseCase())
-                    MovieListScreen(viewModel = viewModel)
+                    MainScreen()
                 }
             }
         }

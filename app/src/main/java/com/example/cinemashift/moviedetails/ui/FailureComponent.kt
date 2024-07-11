@@ -1,4 +1,4 @@
-package com.example.cinemashift.movielist.ui
+package com.example.cinemashift.moviedetails.ui
 
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -13,7 +13,7 @@ fun FailureComponent(message: String, onRetry: () -> Unit)
 {
     AlertDialog(
         onDismissRequest = {},
-        title = { Text(text = stringResource(id = R.string.movie_list_failure)) },
+        title = { Text(text = stringResource(id = R.string.movie_details_failure)) },
         text = { Text(text = message) },
         confirmButton = {
             Button(onClick = onRetry) {

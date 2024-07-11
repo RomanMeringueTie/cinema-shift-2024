@@ -1,7 +1,7 @@
-package com.example.cinemashift.movielist.data.converter
+package com.example.cinemashift.common.data.converter
 
 import com.example.cinemashift.movielist.data.model.MovieList
-import com.example.cinemashift.movielist.data.model.Movie
+import com.example.cinemashift.common.data.model.Movie
 
 class MovieListConverter() {
     fun convert(movieListModel: MovieList) = MovieList(
