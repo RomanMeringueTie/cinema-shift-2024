@@ -33,7 +33,9 @@ fun MovieListScreen(
 )
 {
     val movieListState by viewModel.state.collectAsState()
-    viewModel.loadList()
+    LaunchedEffect(Unit) {
+        viewModel.loadList()
+    }
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally)  {
