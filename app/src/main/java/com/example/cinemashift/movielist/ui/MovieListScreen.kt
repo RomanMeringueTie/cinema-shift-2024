@@ -27,10 +27,15 @@ import com.example.cinemashift.movielist.ui.FailureComponent
 import com.example.cinemashift.movielist.ui.LoadingComponent
 
 @Composable
-fun MovieListScreen(viewModel: MovieListViewModel)
+fun MovieListScreen(
+    viewModel: MovieListViewModel,
+    onItemSelected: (id: String) -> Unit
+)
 {
     val movieListState by viewModel.state.collectAsState()
-    viewModel.loadMovieList()
+    LaunchedEffect(Unit) {
+        viewModel.loadList()
+    }
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally)  {
@@ -43,9 +48,8 @@ fun MovieListScreen(viewModel: MovieListViewModel)
         when (val state = movieListState) {
             is MovieListState.Initial,
             is MovieListState.Loading -> LoadingComponent()
-            is MovieListState.Content -> ContentComponent(movieItems = state.movieListItem.films)
-            is MovieListState.Failure -> FailureComponent(message = state.message ?: stringResource(id = R.string.movie_list_failure), {viewModel.loadMovieList()})
+            is MovieListState.Content -> ContentComponent(movieItems = state.movieListItem.films, onItemSelected)
+            is MovieListState.Failure -> FailureComponent(message = state.message ?: stringResource(id = R.string.movie_list_failure), {viewModel.loadList()})
         }
-
     }
 }

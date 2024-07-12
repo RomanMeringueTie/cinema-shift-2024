@@ -1,4 +1,4 @@
-package com.example.cinemashift.movielist.data.model
+package com.example.cinemashift.common.data.model
 
 import kotlinx.serialization.Serializable
 

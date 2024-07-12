@@ -1,14 +1,14 @@
-package com.example.cinemashift.movielist.data.converter
+package com.example.cinemashift.common.data.converter
 
 import com.example.cinemashift.movielist.data.model.MovieList
-import com.example.cinemashift.movielist.data.model.Movie
+import com.example.cinemashift.common.data.model.Movie
 
-class MovieListConverter() {
+class MovieListConverter {
     fun convert(movieListModel: MovieList) = MovieList(
         success = movieListModel.success,
         films = convertMovieModelList(movieListModel.films)
     )
-    fun convertMovieModelList(movieModelList: List<Movie>): List<Movie>
+    private fun convertMovieModelList(movieModelList: List<Movie>): List<Movie>
     {
         val result = mutableListOf<Movie>()
         for (i in movieModelList)

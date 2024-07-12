@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CinemaShift</string>
     <string name="movie_list_failure">Произошла ошибка при загрузке списка фильмов</string>
-    <string name="movie_list_try_again">Попробовать ещё раз</string>
+    <string name="try_again">Попробовать ещё раз</string>
     <string name="movie_list_header">Афиша</string>
     <string name="profession_actor">Актёр</string>
     <string name="profession_director">Режиссёр</string>
@@ -11,4 +11,7 @@
     <string name="age_rating_r">16+</string>
     <string name="age_rating_nc17">18+</string>
     <string name="movie_list_button">Подробнее</string>
+    <string name="movie_details_failure">Произошла ошибка при загрузке подробностей о фильме</string>
+    <string name="movie_details_description">Описание</string>
+    <string name="movie_details_actors">Актёры</string>
 </resources>

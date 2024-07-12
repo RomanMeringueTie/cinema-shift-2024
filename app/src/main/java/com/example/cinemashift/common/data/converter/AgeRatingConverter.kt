@@ -1,4 +1,4 @@
-package com.example.cinemashift.movielist.data.converter
+package com.example.cinemashift.common.data.converter
 
 import android.content.res.Resources
 import com.example.cinemashift.R

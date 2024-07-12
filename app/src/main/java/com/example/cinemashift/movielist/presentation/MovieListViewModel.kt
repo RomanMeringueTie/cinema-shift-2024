@@ -13,8 +13,7 @@ class MovieListViewModel(private val getMovieListUseCase: GetMovieListUseCase): 
     private val _state =MutableStateFlow<MovieListState>(MovieListState.Initial)
     val state: StateFlow<MovieListState> = _state
 
-    fun loadMovieList()
-    {
+    fun loadList() {
         if (_state.value is MovieListState.Content || _state.value is MovieListState.Loading)
             return
         viewModelScope.launch{
