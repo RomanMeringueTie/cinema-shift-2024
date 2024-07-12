@@ -51,6 +51,5 @@ fun MovieListScreen(
             is MovieListState.Content -> ContentComponent(movieItems = state.movieListItem.films, onItemSelected)
             is MovieListState.Failure -> FailureComponent(message = state.message ?: stringResource(id = R.string.movie_list_failure), {viewModel.loadList()})
         }
-
     }
 }
